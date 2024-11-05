@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+body {
+            margin-top: 150px;
+        }
+        .filter-section, .filter-section select, .filter-section input {
+            margin: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .table-container {
+        	border-top: 3px solid #4294F1;
+        }
+     
