@@ -18,20 +18,29 @@ import mvc.command.NullHandler;
 
 public class ControllerUsingURI extends HttpServlet {
 
+	// MVC 패턴2에서는 서블릿이 컨트롤러의 역할을 맡는다.
+	// 클라이언트의 요청을 컨트롤러가 어떻게 파악할 것인지
+	// 이동 경로를 어떻게 잡을 것인지, 무엇을 실행할지 처리하는 프로그램
+	
 	// Map<키, 값> : 키로 String형 데이터를, 값으로 CommandHandler 타입의 인스턴스를 받는 맵
 	private Map<String, CommandHandler> commandHandlerMap = new HashMap<>();
 
 	// 서블릿이 초기화됐을 때 한번만 실행되는 메서드
 	public void init() throws ServletException {
+		// web.xml에 정의해둔 configFile이라는 이름의 파라미터를 가져온다.
+		// 이 파라미터에는 파일의 주소(/WEB-INF/commandHandler.properties)가 담겨있다.
 		String configFile = getInitParameter("configFile");
 		Properties prop = new Properties();
 		String configFilePath = getServletContext().getRealPath(configFile);
+		
 		try (FileReader fis = new FileReader(configFilePath)) {
 			prop.load(fis);
 		} catch (IOException e) {
 			throw new ServletException(e);
 		}
-		Iterator keyIter = prop.keySet().iterator();
+		
+		Iterator<?> keyIter = prop.keySet().iterator();
+		
 		while (keyIter.hasNext()) {
 			String command = (String) keyIter.next();
 			String handlerClassName = prop.getProperty(command);
@@ -67,7 +76,7 @@ public class ControllerUsingURI extends HttpServlet {
 		String viewPage = null;
 		try {
 			viewPage = handler.process(request, response);
-			System.out.println(viewPage); // 원하시면 이 줄을 삭제할 수 있습니다.
+			System.out.println(viewPage); // 필요에 따라 삭제할 수 있습니다.
 		} catch (Exception e) {
 			throw new ServletException(e);
 		}
