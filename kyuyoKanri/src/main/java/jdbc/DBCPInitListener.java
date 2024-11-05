@@ -22,7 +22,6 @@ public class DBCPInitListener implements ServletContextListener {
 	public void contextInitialized(ServletContextEvent sce) {
 		// web.xml에 정의해둔 파라미터 poolConfig 값을 가져옴
 		String poolConfig = sce.getServletContext().getInitParameter("poolConfig");
-		
 		/* poolConfig 변수에 저장되는 값
 		oracledriver=oracle.jdbc.driver.OracleDriver
   		Url=jdbc:oracle:thin:@localhost:1521/xe

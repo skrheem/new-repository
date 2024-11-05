@@ -1,0 +1,289 @@
+/* 전체 레이아웃 */
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+/* 큰 텍스트 스타일 */
+.header-text {
+	font-size: 36px; /* 텍스트 크기 */
+	font-weight: bold; /* 굵은 글씨 */
+	text-align: center; /* 가운데 정렬 */
+	margin: 30px 0; /* 상하 여백 */
+	color: #333; /* 텍스트 색상 */
+}
+
+/* 큰 텍스트 스타일 */
+.header-text2 {
+	font-size: 15px; /* 텍스트 크기 */
+	font-weight: bold; /* 굵은 글씨 */
+	text-align: center; /* 가운데 정렬 */
+	margin: 2px 0; /* 상하 여백 */
+	color: #333; /* 텍스트 색상 */
+}
+
+h1 {
+	text-align: center;
+	font-size: 24px;
+	font-weight: bold;
+	margin: 20px 0;
+}
+
+p {
+	text-align: center;
+	font-size: 14px;
+	color: #666;
+}
+
+/* 상단 통계 표시 */
+.flex-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 20px;
+	border-top : 0.3px solid #666;
+	padding-top : 20px;
+}
+
+.flex-container2 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 20px;
+
+}
+
+.page-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+.setting-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 20px;
+}
+
+.label-box {
+	width: 100px;
+	padding: 10px 5px;
+	text-align: center;
+	border-radius: 4px;
+	font-weight: bold;
+	color: #333;
+}
+
+.label-box.selected {
+	background-color: #ff8f8f; /* 핑크색 */
+	color: #fff;
+}
+
+.label-box.default-blue {
+	background-color: #87cefa; /* 연한 파란색 */
+}
+
+.label-box.default-gray {
+	background-color: #d3d3d3; /* 연한 회색 */
+}
+
+.label-box:nth-child(9) {
+	background-color: #333;
+	color: #fff;
+}
+
+/* 검색 및 필터 옵션 */
+.search-filter-section, .list-options {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 5px;
+	margin: 10px 0;
+}
+
+.search-filter-section select, .list-options select {
+	padding: 5px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+}
+
+button {
+	padding: 5px 10px;
+	background-color: #4a90e2;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: #357abd;
+}
+
+/* 리스트 가운데 정렬과 양쪽 여백 추가 */
+.scrollable-container {
+	width: 100%;
+	max-width: 1700px; /* 최대 너비 설정 */
+	width:1700px;
+	padding: 0 10 10%; /* 좌우 여백 추가 */
+	box-sizing: border-box; /* 패딩 포함한 너비 조정 */
+}
+
+.scrollable-table {
+	width: 100%; /* 부모 컨테이너의 100% */
+	overflow-x: auto;
+	text-align: center;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 테두리 그림자 추가 */
+	background-color: #ffffff; /* 배경색 추가 */
+	border-radius: 8px; /* 모서리 둥글게 */
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+/* 테이블 행에 마우스를 올렸을 때 배경색 변경 */
+tbody tr:hover {
+	background-color: #E0FFFF;
+}
+
+th, td {
+	padding: 10px;
+	border: 1px solid #ddd;
+}
+
+thead th {
+	background-color: #f2f2f2;
+	font-weight: bold;
+}
+
+/* 페이징 및 하단 버튼 */
+.pagination, .bottom-buttons {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	margin: 20px 0;
+}
+
+.pagination button, .bottom-buttons button {
+	background-color: #4a90e2;
+	color: white;
+	padding: 8px 16px;
+	border: none;
+	border-radius: 4px;
+	font-weight: bold;
+}
+
+.pagination button:hover, .bottom-buttons button:hover {
+	background-color: #357abd;
+}
+
+.bottom-buttons button:nth-child(3) {
+	background-color: gray;
+}
+
+.bottom-buttons button:nth-child(4) {
+	background-color: green;
+}
+
+/* 팝업 창 스타일 */
+.popup-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	display: none; /* 처음에는 보이지 않도록 */
+	justify-content: center;
+	align-items: center;
+	z-index: 9999;
+}
+
+.popup-content {
+	background: #fff;
+	padding: 20px;
+	border-radius: 8px;
+	width: 300px;
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.popup-content h2 {
+	font-size: 18px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+.popup-content ul {
+	list-style: none;
+	padding: 0;
+}
+
+.popup-content li {
+	margin: 5px 0;
+}
+
+.popup-content button {
+	width: 100%;
+	padding: 10px;
+	background-color: #007bff;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.popup-content button:hover {
+	background-color: #0056b3;
+}
+
+/*미니팝업*/
+.popup-overlay {
+	position: fixed;
+	display: none; /* 처음에는 보이지 않도록 */
+	background: rgba(0, 0, 0, 0.7);
+	z-index: 1000;
+	color: #fff;
+	border-radius: 5px;
+	padding: 10px;
+}
+
+.popup-content {
+	background: white;
+	color: black;
+	border-radius: 5px;
+	padding: 20px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.mini-popup-button {
+	display: flex;
+	justify-content: center;
+	gap: 10px; /* 버튼 간격 */
+	margin: 10px 0; /* 위아래 여백 */
+}
+
+.mini-popup-button button {
+	padding: 8px 16px;
+	background-color: #4a90e2;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.mini-popup-button button:hover {
+	background-color: #357abd; /* 호버 시 색상 변경 */
+}
