@@ -130,7 +130,6 @@ public class ControllerUsingURI extends HttpServlet {
 			handler = new NullHandler();
 		}
 		
-		
 		String viewPage = null;
 		try {
 			// HelloHandler에는 process() 메서드가 있는데
